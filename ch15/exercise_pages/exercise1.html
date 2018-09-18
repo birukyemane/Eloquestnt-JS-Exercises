@@ -20,14 +20,12 @@ it should inflate (grow) 10 percent, and when you press the down arrow, it shoul
           if((size+size*0.1) > 50) {
             document.querySelector('#balloon').textContent = '💥';
           } else {
-            balloon.style.fontSize = `${size+=size}px`; 
-            alert(size);
+            balloon.style.fontSize = `${size+=size}px`;            
           } 
           
         } else if(e.key == 'ArrowDown'){
           size = ((size - size*0.1) < 10 ? size :  size-size*0.1);
-          balloon.style.fontSize = `${size}px`; 
-          alert(size);
+          balloon.style.fontSize = `${size}px`;          
         }
       });
     </script>
