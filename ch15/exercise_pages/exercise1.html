@@ -1,0 +1,35 @@
+<!-- Write a page that displays a balloon (using the balloon emoji, 🎈). When you press the up arrow, 
+it should inflate (grow) 10 percent, and when you press the down arrow, it should deflate (shrink)
+ 10 percent. -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Exercise 1 - Ballon </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <p id="balloon">🎈</p>
+
+    <script>
+      let balloon = document.querySelector('#balloon');
+      let size = 10;
+      document.addEventListener('keydown', e => {
+        if(e.key == 'ArrowUp'){
+          if((size+size*0.1) > 50) {
+            document.querySelector('#balloon').textContent = '💥';
+          } else {
+            balloon.style.fontSize = `${size+=size}px`; 
+            alert(size);
+          } 
+          
+        } else if(e.key == 'ArrowDown'){
+          size = ((size - size*0.1) < 10 ? size :  size-size*0.1);
+          balloon.style.fontSize = `${size}px`; 
+          alert(size);
+        }
+      });
+    </script>
+</body>
+</html>
